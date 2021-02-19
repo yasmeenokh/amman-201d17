@@ -9,11 +9,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
+    let result = a+b; 
+    let statement = `The sum of ${a} and ${b} is ${result}.`;
+    return [result,statement];  
+     }
+    
 
-}
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -27,11 +31,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
+    let result= a*b; 
+    let statement= `The product of ${a} and ${b} is ${result}.`;
+    return [result, statement];
+    }
+    
 
-}
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -48,11 +56,24 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+    let arr= []
 
+    let sum1= sum(a,b)[0];
+    let sum2= sum(sum1,c)[0];
+    arr[0] = sum2; 
+    
+    let multi1= multiply(a,b)[0];
+    let multi2= multiply(multi1,c)[0];
+    arr[1]= multi2;
+    
+    arr[2]= `${a} and ${b} and ${c} sum to ${sum2}.`; 
+    arr[3]= `The product of ${a} and ${b} and ${c} is ${multi2}.`; 
+    
+    return arr;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -70,12 +91,21 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+    let step= [];    
+    let step1= sum(sumArr[0],sumArr[1])[0];
+    let step2= sum(step1, sumArr[2])[0];
+    let final= `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${step2} is their sum.`;
+    
+    
+    return [step2, final];
+    
+    }
+    
 
-}
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -91,11 +121,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    let step= [];    
+    let step1= multiply(multArr[0],multArr[1])[0];
+    let step2= multiply(step1, multArr[2])[0];
+    let final= `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${step2}.`;
+    
+    return [step2, final];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
